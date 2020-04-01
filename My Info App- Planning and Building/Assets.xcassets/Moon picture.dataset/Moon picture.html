@@ -1,0 +1,2171 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"df69935d81",applicationID:"157680863"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="referrer" content="origin-when-crossorigin"/>
+<meta http-equiv="content-language" content="en-us"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<meta name="robots" content="INDEX, FOLLOW"/>
+<title>The Hollow Moon Theory; Is the Moon an Artificial Satellite? | Gaia</title>
+<meta itemprop="name" content="The Hollow Moon Theory; Is the Moon an Artificial Satellite? | Gaia"/>
+<meta itemprop="image" content="https://www.gaia.com/wp-content/uploads/hollow-moon-e1550619203570.jpg"/>
+<meta itemprop="description" content="During the Apollo missions NASA found that the moon rings like a bell when during seismic activity. They also found the presence of processed minerals not naturally occurring on Earth."/>
+<meta name="description" content="During the Apollo missions NASA found that the moon rings like a bell when during seismic activity. They also found the presence of processed minerals not naturally occurring on Earth."/>
+
+                        <link rel="alternate" href="https://www.gaia.com/article/the-hollow-moon-theory-is-the-moon-an-artificial-satellite" hreflang="x-default">
+                        <link rel="alternate" href="https://www.gaia.com/article/the-hollow-moon-theory-is-the-moon-an-artificial-satellite" hreflang="en-us">
+                        
+<link rel="canonical" href="https://www.gaia.com/article/the-hollow-moon-theory-is-the-moon-an-artificial-satellite"/>
+
+<meta property="fb:pages" content="182073298490036" />
+<meta property="fb:app_id" content="142923865786607"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.gaia.com/article/the-hollow-moon-theory-is-the-moon-an-artificial-satellite"/>
+<meta property="og:title" content="The Hollow Moon Theory; Is the Moon an Artificial Satellite? | Gaia"/>
+<meta property="og:description" content="During the Apollo missions NASA found that the moon rings like a bell when during seismic activity. They also found the presence of processed minerals not naturally occurring on Earth."/>
+<meta property="og:image" content="https://www.gaia.com/wp-content/uploads/hollow-moon-e1550619203570.jpg"/>
+<meta property="og:image:width" content="600"/>
+<meta property="og:image:height" content="600"/>
+<meta property="og:site_name" content="Gaia"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@JoinGaia"/>
+<meta name="twitter:title" content="The Hollow Moon Theory; Is the Moon an Artificial Satellite? | Gaia"/>
+<meta name="twitter:description" content="During the Apollo missions NASA found that the moon rings like a bell when during seismic activity. They also found the presence of processed minerals not naturally occurring on Earth."/>
+<meta name="twitter:image:src" content="https://www.gaia.com/wp-content/uploads/hollow-moon-e1550619203570.jpg"/>
+<link rel="stylesheet" href="/wp-content/themes/gaia-marketing-layer/article-style.css?fmcb=1585610185" type="text/css" media="screen"/>
+<link rel="stylesheet" href="/wp-content/themes/gaia-marketing-layer/assets/css/fontawesome/all.min.css?fmcb=1585610180" type="text/css" media="screen"/>
+<script type="text/javascript" src="/wp-content/themes/gaia-marketing-layer/assets/js/jquery.min.js?fmcb=1585610180"></script>
+<script>
+    var dataLayer = dataLayer || [],
+        gtm_object = {
+            'pageLanguage' : 'en',
+        },
+        custom_taxonomy = [];
+
+    /* Extended GTM data for taxonomies in articles */
+    custom_taxonomy = {"site_segment":"seeking-truth","category":"secrets-and-cover-ups","subcategory":"secret-space-program"};
+
+    /* TODO: Hook into a json obj or obfuscate - no sensitive data here, but is best practice */
+    // Global declaration for generic obj if needed for x script comms (lang required)
+    var GAIA_GLOBALS = {
+        lang: 'en',
+        locale: 'us',
+        post_type: 'article-en',
+        content_type: 'article',
+        dbi_aws_domain: 'www.gaia.com',
+        dbi_auth_api: 'https://auth.gaia.com',
+        dbi_brooklyn_api: 'https://brooklyn.gaia.com',
+        dbi_billing_api: 'https://brooklyn.gaia.com/v1',
+        language_detection : 0,
+        site_segment: (custom_taxonomy && custom_taxonomy['site_segment']) ? custom_taxonomy['site_segment'] : '',
+        content_category: (custom_taxonomy && custom_taxonomy['category']) ? custom_taxonomy['category'] : '',
+        content_subcategory: (custom_taxonomy && custom_taxonomy['subcategory']) ? custom_taxonomy['subcategory'] : '',
+        content_id: 9762,
+        timers : {} // Placeholder for countdown timers
+    };
+
+    gtm_object['siteSegment'] = GAIA_GLOBALS.site_segment;
+    gtm_object['category'] = GAIA_GLOBALS.content_category;
+    gtm_object['subCategory'] = GAIA_GLOBALS.content_subcategory;
+
+    // Set all the data we have on page load...
+    dataLayer.push(gtm_object);
+
+</script>
+
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-56R2PJ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-56R2PJ');
+</script>
+
+<script type="text/javascript">
+    var ScarabQueue = ScarabQueue || [];
+    (function (id) {
+        if (document.getElementById(id)) return;
+        var js = document.createElement('script');
+        js.id = id;
+        js.src = '//cdn.scarabresearch.com/js/19C0861C4D902C4F/scarab-v2.js';
+        var fs = document.getElementsByTagName('script')[0];
+        fs.parentNode.insertBefore(js, fs);
+    })('scarab-js-api');
+</script>
+
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<meta name="generator" content="WordPress 5.3.2" />
+
+
+    <!-- Global Custom CSS -->
+    
+
+    <!-- Global Custom JS -->
+    
+
+</head>
+<body class="article-en-template-default single single-article-en postid-9762 article" data-template="base.twig" data-ci_type="" data-ci_nid="">
+
+    
+<section id="content" role="main" class="content-wrapper">
+    
+    <div class="wrapper ">
+        
+    <!-- Site Ribbon -->
+    
+
+        <div class="webapp-header">
+                                    <header class="header--web-app nav__desktop">
+        <div class="row align-items-center">
+            <div class="col-4 logo d-flex">
+                <a href="/" target="_self"><img src="/wp-content/themes/gaia-marketing-layer/assets/images/logos/gaia-logo-default.svg"></a>
+            </div>
+            <div class="col-8 d-flex justify-content-end align-items-center">
+                                <div class="language-selection-icon d-flex align-items-center" id="nav-lang-dropdown" aria-haspopup="true" aria-controls="#nav-lang-dropdown" aria-expanded="false" aria-label="header langauge select">
+                    <img class="globe" id="globe-icon" src="/wp-content/themes/gaia-marketing-layer/assets/images/icons/ls_globe.svg" alt="globe">
+                    <img class="globe toggle-down" src="/wp-content/themes/gaia-marketing-layer/assets/images/icons/ls_downarrow.svg" alt="downarrow">
+                    <img class="globe toggle-up" src="/wp-content/themes/gaia-marketing-layer/assets/images/icons/ls_arrow.svg" alt="arrow">
+                </div>
+                <a id="login_webapp_header" class="login btn btn--xs btn--secondary" href="#" >Log In</a>
+                <a id="signup_webapp_header" class="btn  btn--xs btn--primary" href="/plan-selection" target="_self">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container col-12">
+        <div class="row d-flex justify-content-end">
+            <div class="dropdown-menu-lang language-selection">
+                <div class="nav-option-wrapper">
+                    <a target="_self" href="/" data-lang="en">
+                        <div class="simple-option highlight">
+                            <i class="fa fa-check fa-sm"></i><span> English</span></div>
+                    </a></div>
+                <div class="nav-option-wrapper">
+                    <a target="_self" href="/us/es" data-lang="es">
+                        <div class="simple-option ">
+                            <i class="fa fa-check fa-sm"></i><span> Español</span></div>
+                    </a></div>
+                <div class="nav-option-wrapper">
+                    <a target="_self" href="/us/de" data-lang="de">
+                        <div class="simple-option ">
+                            <i class="fa fa-check fa-sm"></i><span> Deutsch</span></div>
+                    </a></div>
+                <div class="nav-option-wrapper">
+                    <a target="_self" href="/us/fr" data-lang="fr">
+                        <div class="simple-option ">
+                            <i class="fa fa-check fa-sm"></i><span> Français</span></div>
+                    </a></div>
+            </div>
+        </div>
+    </div>
+
+        <nav class="nav__desktop nav">
+        <div id="nav__desktop">
+            <ul class=" col-12 d-flex align-items-center nav__primary"><li class="nav__item active"><a role="link"  href="/" target="_self"><span>Home</span></a></li><li class="nav__item active"><a role="link"  href="/yoga" target="_self"><span>Yoga</span></a></li><li class="nav__item active"><a role="link"  href="/style/yoga-meditation" target="_self"><span>Meditation</span></a></li><li class="nav__item active"><a role="link"  href="/seeking-truth/original-programs" target="_self"><span>Series</span></a></li><li class="nav__item active"><a role="link"  href="/films-docs/documentaries" target="_self"><span>Docs & Films</span></a></li><li class="nav__item active"><a role="link"  href="/topics" target="_self"><span>Topics</span></a></li><li class="nav__item active"><a role="link"  href="/recently-added" target="_self"><span>New Videos</span></a></li><li class="nav__item active"><a role="link"  href="/events" target="_self"><span>Events</span></a></li><li class="nav__item active"><a role="link"  href="/articles/latest" target="_self"><span>Articles</span></a></li>
+                        <li class="nav__item has-popup" id="webapp-menu" aria-haspopup="true" aria-controls="#webapp-menu" aria-expanded="false" aria-label="desktop sub menu toggle">
+                            <button class="nav-ellipsis" >
+                                <a class="d-flex align-items-center elipses" role="link" >...</a>
+                            </button>
+                            <div class="container col-12 ">
+                                <ul class="secondary-selection nav__secondary"><li class="col-12 sub_nav__item heading" role="heading"><a role="link" href="/recipes/all-recipes" target="_self" ><span>Recipes</span></a></li><li class="col-12 sub_nav__item heading" role="heading"><span>Alternative Healing</span></li><li class="col-12 sub_nav__item"><a role="link" href="/alternative-healing/food-nutrition" target="_self" ><span>Food & Nutrition</span></a></li><li class="col-12 sub_nav__item"><a role="link" href="/alternative-healing/energy-healing" target="_self" ><span>Energy Healing</span></a></li><li class="col-12 sub_nav__item"><a role="link" href="/alternative-healing/longevity-wellness" target="_self" ><span>Longevity & Wellness</span></a></li><li class="col-12 sub_nav__item heading" role="heading"><span>Transformation</span></li><li class="col-12 sub_nav__item"><a role="link" href="/transformation/spiritual-growth" target="_self" ><span>Spiritual Growth</span></a></li><li class="col-12 sub_nav__item"><a role="link" href="/transformation/personal-development" target="_self" ><span>Personal Development</span></a></li><li class="col-12 sub_nav__item"><a role="link" href="/transformation/expanded-consciousness" target="_self" ><span>Expanded Consciousness</span></a></li><li class="col-12 sub_nav__item heading" role="heading"><span>Seeking Truth</span></li><li class="col-12 sub_nav__item"><a role="link" href="/seeking-truth/metaphysics" target="_self" ><span>Metaphysics</span></a></li><li class="col-12 sub_nav__item"><a role="link" href="/seeking-truth/secrets-cover-ups" target="_self" ><span>Secrets & Cover Ups</span></a></li><li class="col-12 sub_nav__item"><a role="link" href="/seeking-truth/ancient-origins" target="_self" ><span>Ancient Origins</span></a></li><li class="col-12 sub_nav__item"><a role="link" href="/seeking-truth/paranormal" target="_self" ><span>Paranormal & Unexplained</span></a></li></ul>
+                        </div>
+                    </li><li class="nav__item nav__item--search">
+                    <div class=" search-form">
+                        <form class="search-form__form" action="/search" method="GET">
+                            <div class="search-form__input-wrapper">
+                                <input id="autocomplete" class="search-form__input" type="text" name="q" placeholder="Search" value="" lang="en" alt="Search" /><i id="filtersubmit" class="fa fa-search"></i>
+                                <button type="submit" class="search-form-button"><span class="icon icon--search search-form-button__icon icon--action"></span></button>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+        <div class="container navbar navbar-light col-12 d-sm-flex  align-items-center" id="mobile_nav">
+        <div class="navbar-brand logo d-flex">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-haspopup="true" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" href="javascript: void(0)">
+                <div id="nav-icon3">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <a href="/" target="_self"><img id="gaia-logo" style="" src="/wp-content/themes/gaia-marketing-layer/assets/images/logos/gaia-logo-default.svg"></a>
+        </div>
+        <div class="form-inline navbar-brand nav_buttons">
+            <a class="login btn btn--xs btn--secondary" href="#"  id="login_webapp_header--mobile">Log In</a>
+            <a class="btn btn--xs btn--primary" href="/plan-selection" target="_self"  id="signin_webapp_header--mobile" style="color: #fff;">Sign Up</a>
+        </div>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="d-flex flex-column nav__primary nav__mobile"><li class="nav__item mobile active"><a role="button" href="/" target="_self"><span>Home</span></a></li><li class="nav__item mobile active"><a role="button" href="/yoga" target="_self"><span>Yoga</span></a></li><li class="nav__item mobile active"><a role="button" href="/style/yoga-meditation" target="_self"><span>Meditation</span></a></li><li class="nav__item mobile active"><a role="button" href="/seeking-truth/original-programs" target="_self"><span>Series</span></a></li><li class="nav__item mobile active"><a role="button" href="/films-docs/documentaries" target="_self"><span>Docs & Films</span></a></li><li class="nav__item mobile active"><a role="button" href="/topics" target="_self"><span>Topics</span></a></li><li class="nav__item mobile active"><a role="button" href="/recently-added" target="_self"><span>New Videos</span></a></li><li class="nav__item mobile active"><a role="button" href="/events" target="_self"><span>Events</span></a></li><li class="nav__item mobile active"><a role="button" href="/articles/latest" target="_self"><span>Articles</span></a></li>
+				<li class="nav__item mobile ">
+                    <button class="nav-ellipsis" id="mobile-menu" aria-haspopup="true" aria-controls="#mobile-menu" aria-expanded="false" aria-label="sub menu toggle" >
+                        <a class="d-flex align-items-center elipses"  role="link" >...</a>
+                    </button>
+                    <ul class=" d-flex flex-column nav__secondary" id="mobilenav"><li class="nav__item_mobile section-linked" role="heading"><a role="link" href="/recipes/all-recipes" target="_self" ><span>Recipes</span></a></li><li class="nav__item_mobile " role="heading"><span>Alternative Healing</span></li><li class="nav__item_mobile"><a role="link" href="/alternative-healing/food-nutrition" target="_self" ><span>Food & Nutrition</span></a></li><li class="nav__item_mobile"><a role="link" href="/alternative-healing/energy-healing" target="_self" ><span>Energy Healing</span></a></li><li class="nav__item_mobile"><a role="link" href="/alternative-healing/longevity-wellness" target="_self" ><span>Longevity & Wellness</span></a></li><li class="nav__item_mobile " role="heading"><span>Transformation</span></li><li class="nav__item_mobile"><a role="link" href="/transformation/spiritual-growth" target="_self" ><span>Spiritual Growth</span></a></li><li class="nav__item_mobile"><a role="link" href="/transformation/personal-development" target="_self" ><span>Personal Development</span></a></li><li class="nav__item_mobile"><a role="link" href="/transformation/expanded-consciousness" target="_self" ><span>Expanded Consciousness</span></a></li><li class="nav__item_mobile " role="heading"><span>Seeking Truth</span></li><li class="nav__item_mobile"><a role="link" href="/seeking-truth/metaphysics" target="_self" ><span>Metaphysics</span></a></li><li class="nav__item_mobile"><a role="link" href="/seeking-truth/secrets-cover-ups" target="_self" ><span>Secrets & Cover Ups</span></a></li><li class="nav__item_mobile"><a role="link" href="/seeking-truth/ancient-origins" target="_self" ><span>Ancient Origins</span></a></li><li class="nav__item_mobile"><a role="link" href="/seeking-truth/paranormal" target="_self" ><span>Paranormal & Unexplained</span></a></li>
+                    </ul>
+                </li><li class="nav__item has-popup has-children"> </li>
+                      <li class="col-10 nav__item nav__item--search" id="mobile-view">
+                        <div class=" mobile search-form">
+                            <form class="search-form__form " action="/search" method="GET">
+                                <div class="search-form__input-wrapper">
+                                    <input id="autocomplete-mobile" class="search-form__input" type="text" name="q" placeholder="Search" value="" lang="en" alt="Search"><i id="filtersubmit-mobile" class="fa fa-search"></i>
+                                    <button type="submit" class="search-form-button"><span class="icon icon--search search-form-button__icon icon--action"></span></button>
+                                </div>
+                            </form>
+                        </div>
+                </li>
+
+    </div>
+
+        <div class="language-selection-icon--mobile" id="nav-lang-dropdown--mobile" aria-haspopup="true" aria-controls="#nav-lang-dropdown--mobile" aria-expanded="false" aria-label="header langauge select">
+        <img class="globe" id="globe-icon" src="/wp-content/themes/gaia-marketing-layer/assets/images/icons/ls_globe-w.svg" alt="globe">
+        <img class="globe toggle-down" src="/wp-content/themes/gaia-marketing-layer/assets/images/icons/ls_downarrow-w.svg" alt="downarrow">
+        <img class="globe toggle-up" src="/wp-content/themes/gaia-marketing-layer/assets/images/icons/Is_arrow-w.svg" alt="arrow">
+    </div>
+
+    <div class="container col-12 dropdown-menu-lang--mobile">
+        <div class="row  d-md-flex justify-content-md-end d-flex justify-content-end">
+            <div class="dropdown-menu-lang language-selection--mobile">
+                <div class="nav-option-wrapper">
+                    <a target="_self" href="/" data-lang="en">
+                        <div class="simple-option highlight">
+                            <i class="fa fa-check fa-sm"></i><span> English</span></div>
+                    </a></div>
+                <div class="nav-option-wrapper">
+                    <a target="_self" href="/us/es" data-lang="es">
+                        <div class="simple-option ">
+                            <i class="fa fa-check fa-sm"></i><span> Español</span></div>
+                    </a></div>
+                <div class="nav-option-wrapper">
+                    <a target="_self" href="/us/de" data-lang="de">
+                        <div class="simple-option ">
+                            <i class="fa fa-check fa-sm"></i><span> Deutsch</span></div>
+                    </a></div>
+                <div class="nav-option-wrapper">
+                    <a target="_self" href="/us/fr" data-lang="fr">
+                        <div class="simple-option ">
+                            <i class="fa fa-check fa-sm"></i><span> Français</span></div>
+                    </a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        var drop_down_field = '.dropdown-menu-lang .nav-option-wrapper';
+
+        function handletoggleAriaExpanded(selector) {
+            $(selector).attr('aria-expanded', function (i, attr) {
+                return attr == 'true' ? 'false' : 'true'
+            });
+        }
+
+        // Hides Login/Signup for Logged in Users
+        if($.fn.isLoggedIn()) {
+            $('#login_webapp_header, #signup_webapp_header').hide();
+        }
+
+        //Handles the mobile nav toggle
+        $('#nav-icon3, .navbar-toggler').on('click', function () {
+            $(this).toggleClass('open');
+        });
+
+        $(window).resize(function () {
+            if ($(this).width() > 1024) {
+                $('#nav-icon3').removeClass('open');
+            }
+        });
+
+        //Language  Option Menu Highlight
+        $(drop_down_field).on('mouseover', function () {
+            $(drop_down_field).removeClass('highlight');
+            $(this).addClass('highlight');
+        });
+
+        //Language Option Menu Highlight
+        $(drop_down_field).on('mouseout', function() {
+            // Update UI to MO State
+            $(drop_down_field).removeClass('highlight');
+        });
+
+        // Language Selection once Clicked
+        $(drop_down_field).on('click', function(e) {
+            // Hide and reset drop down UI
+            $('.language-selection').hide();
+            $('.toggle-up-select').hide();
+            $('.toggle-down-select').show();
+            // Set language preferences in local storage
+            $.fn.setLanguagePreference($(this).find('a').attr('data-lang'));
+        });
+
+        $('.language-selection-icon--mobile').on('click', function () {
+            handletoggleAriaExpanded(this);
+            $(document).off('click.webappNavigationLanguageSelectMenu');
+            //Checks if lanaguage menu is showing
+            if ($('.toggle-down').is(":visible")) {
+                $('.toggle-down').hide();
+                $('.toggle-up').show();
+                $('.language-selection--mobile').fadeIn(500, function () {
+                    //handles triangle elements
+                    $(document).on('click.webappNavigationLanguageSelectMenu', function () {
+                        $('.language-selection--mobile').hide();
+                        $('.toggle-down').show();
+                        $('.toggle-up').hide();
+                    });
+                });
+            } else {
+                $('.toggle-down').show();
+                $('.toggle-up').hide();
+                $('.language-selection--mobile').hide();
+            }
+
+        });
+
+        //Toggle arrow open
+        $('.language-selection-icon').on('click', function () {
+            handletoggleAriaExpanded(this);
+            $(document).off('click.webappNavigationLanguageSelectMenu');
+            //Checks if language menu is showing
+            if ($('.toggle-down').is(":visible")) {
+                $('.toggle-down').hide();
+                $('.toggle-up').show();
+                $('.language-selection').fadeIn(500, function () {
+                    //handles triangle elements
+                    $(document).on('click.webappNavigationLanguageSelectMenu', function (e) {
+                        $('.language-selection').hide();
+                        $('.toggle-down').show();
+                        $('.toggle-up').hide();
+                    });
+                });
+            } else {
+                $('.toggle-down').show();
+                $('.toggle-up').hide();
+                $('.language-selection').hide();
+            }
+        });
+
+        //Handles Desktop drop down menu
+        $('.has-popup').click(function () {
+            handletoggleAriaExpanded(this);
+            $(document).off('click.webappNavigationDropdownMenu');
+            $('.nav__secondary').fadeIn(560, function () {
+                if ($('.nav__secondary').css('display') === "block") {
+                    $(document).on('click.webappNavigationDropdownMenu', function () {
+                        $('.nav__secondary').hide();
+                    });
+                }
+            });
+        });
+
+        //Handle search autocomplete
+        let lang_param = $('input#autocomplete').attr('lang'),
+            url = GAIA_GLOBALS.dbi_brooklyn_api +"/search/autocomplete?language=" + lang_param,
+            auto_complete = $("#autocomplete"),
+            auto_completeMobile = $("#autocomplete-mobile");
+
+        //Handle search autocomplete Large Screen
+        function handle_autoComplete(el){
+
+            el.autocomplete({
+                serviceUrl: url,
+                triggerSelectOnValidInput: false,
+                paramName: 'searchTerm',
+                preventBadQueries: false,
+                transformResult: function(response) {
+                    return {
+                        suggestions: $.map(jQuery.parseJSON(response), function(item) {
+                            return {
+                                value: item.value,
+                                data: item.type,
+                            };
+                        })
+                    };
+                },
+                onSelect: function (suggestions) {
+                    var surl = ("/search?q=" + suggestions.value );
+                     window.location = surl;
+
+                }
+            });
+
+        }
+
+        handle_autoComplete(auto_complete);
+        handle_autoComplete(auto_completeMobile);
+
+        //Handles the click into Search form
+        $('#filtersubmit, #filtersubmit-mobile').on('click', function () {
+            $('.nav__item--search input').focus();
+        });
+
+        //Handles sub menu in mobile
+        $('#mobile-menu').on('click', function () {
+            handletoggleAriaExpanded($('#mobile-menu'));
+            $('.nav__item_mobile').slideToggle();
+        });
+
+    });
+</script>
+<script src="/wp-content/themes/gaia-marketing-layer/assets/js/jquery.autocomplete.min.js"></script>
+
+    <div class="page-wrapper article" xmlns="http://www.w3.org/1999/html">
+
+        <div class="container template__container">
+            <div class="row">
+
+                                <div class="col-lg-8 left-col">
+
+                                        <div class="topics__nav"><ol vocab="https://schema.org/" typeof="BreadcrumbList"><li property="itemListElement" typeof="ListItem">    <a property="item" typeof="WebPage" href="/articles/list" target="_self"><span property="name">Articles</span></a>    <meta property="position" content="1"></li><span class="breadcrumb__divider">></span><li property="itemListElement" typeof="ListItem">    <a property="item" typeof="WebPage" href="/articles/seeking-truth" target="_self"><span property="name">Seeking Truth</span></a>    <meta property="position" content="2"></li><span class="breadcrumb__divider">></span><li property="itemListElement" typeof="ListItem">    <a property="item" typeof="WebPage" href="/articles/seeking-truth/secrets-and-cover-ups" target="_self"><span property="name">Secrets And Cover Ups</span></a>    <meta property="position" content="3"></li><span class="breadcrumb__divider">></span><li property="itemListElement" typeof="ListItem">    <a property="item" typeof="WebPage" href="/articles/seeking-truth/secrets-and-cover-ups/secret-space-program" target="_self"><span property="name">Secret Space Program</span></a>    <meta property="position" content="4"></li></ol></div>
+                    <h1>The Hollow Moon Theory; Is the Moon an Artificial Satellite?</h1>
+
+                </div>
+
+                <div class="col-lg-4 right-col"></div>
+
+                                <div class="col-lg-8 left-col">
+
+                    <div class="row metadata">
+                                                                                                        <div class="col-auto">
+                                <i class="fas fa-user-circle"></i>
+                                <span class="metadata__attribute">Gaia Staff</span>
+                            </div>
+                                                                        <div class="col-auto">
+                            <i class="far fa-calendar-alt"></i>
+                            <span class="metadata__attribute">February 2, 2020</span>
+                        </div>
+                                                <div class="col-auto">
+                            <i class="fas fa-file-alt"></i>
+                            <span class="metadata__attribute">8 min read</span>
+                        </div>
+                        <div class="col-auto"></div>
+                    </div>
+
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div class="social-share social-share--top">
+                        <div class="addthis_inline_share_toolbox social-share__widget social-share__widget--top"></div>
+                    </div>
+
+                    <!-- Template Main Image -->
+                    <div class="main-image">
+    <img class="main-image__img" src="https://marketing.gaia.com/wp-content/uploads/hollow-moon-e1550619203570-768x432.jpg" alt="Full moon - hollow moon theory"/>
+</div>
+
+                    <!-- Page Configured Layers -->
+                    
+                                                                                                                                                                                                                                                                            
+    <script>
+        $(document).ready(function () {
+            // Gating bg configs, updates global access to all layers
+                    });
+    </script>
+
+                                                                            <div class="layer layer--0 blocks    layer-show"  id=""  style=" padding:30px 0px; margin-top:0px; margin-bottom:0px; ">
+                    <div class="container">
+                        <div class="row">
+
+                                                            <div class="block col-md-12 offset-md-0 "  id=""  style=" ">
+
+                                    
+                                                                                    <div >
+                                                <p>The moon is often described as having divine, feminine energy &#8211; the female counterpart to our Sun. It is a source of cosmic phenomena, providing us with beautiful eclipses, changing tides, and hopefully a future staging point for missions to Mars and beyond. But when we start to look at the moon under a closer lens, a number of aberrant characteristics suggest that it might be hollow &#8212; and that there may be a secret moon base.</p>
+<h2><strong>The Moon Rings Like a Bell</strong></h2>
+<p>The Apollo missions and subsequent moon landings have been at the center of controversy and conspiracy for years. There has been an interminable debate as to whether we actually landed on the moon, what was found there, or to what extent NASA has been hiding information from us. But amid the quarreling and speculation, the number of anomalous features on the moon has <a href="https://www.gaia.com/video/aliens-moon-truth-exposed">puzzled scientists and conspiracy theorists alike.</a></p>
+<p>Toward the latter end of the Apollo missions, NASA astronauts placed seismic recording devices on the lunar surface to document artificial and natural moonquakes. Their equipment recorded activity ranging from meteorite strikes to man-made explosions, and crash landings of Apollo rockets. Even the sun’s heat created seismic activity when it caused the moon to thaw on a daily basis.</p>
+<p>The astronauts were given a series of ALSEPs, or Apollo Lunar Surface Experiment Packages to set up seismographs and initiate detonations ranging from shotgun-like charges to mortars with multiple grenades. Eventually, NASA intentionally crash-landed the Apollo 12 module as well as the S-IVB rocket setting off an explosive force equivalent to nearly 12 tons of TNT.</p>
+
+                                            </div>
+                                                                                                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                                                                                    
+<div class="layer layer--1 multi-content-layer    layer-show"  id=""  style=" padding:0px ; margin-top:; margin-bottom:0px;">
+    
+    <div class="container">
+        
+        <div class="row">
+            
+            <div class="block col-md-12 offset-md-0">
+                
+                <div class="multi-content">
+                    
+                    <div class="row header-content">
+                        <div class="col-md-12">
+                            
+                        </div>
+                    </div>
+                    
+                                            
+                        <div class="featured-content">
+                            
+                            <div class="row">
+                                
+                                                                                                
+                                                                                                    
+                                                                                                                                                
+                                                                
+                                                                                                    
+                                    
+                                                                                                                                                                                                                                                                                                                            
+                                    <div class="bc  col-md-12" style="">
+                                        
+                                        <div id="layer--1--mc--0" class="item-content" data-type="bc" data-value=""  >
+                                            
+                                            <div class="alert alert-info" role="alert"></div>
+                                            
+                                            <div class="main-box embed-responsive embed-responsive-16by9">
+                                                
+                                                <div class="loading"></div>
+                                                
+                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                                                    <div style="" class="bc-box embed-responsive-item">
+                                                        
+                                                        <video id="bc-player-5631204428001"
+                                                               data-video-id="5631204428001"
+                                                               data-account="1324209225001"
+                                                               data-player="4ye3uF8wOe"
+                                                               data-playlist-id=""
+                                                               data-embed="default"
+                                                               data-application-id
+                                                               class="video-js"
+                                                               preload="none"
+                                                               controls>
+                                                                                                                    </video>
+                                                        
+                                                                                                                
+                                                                                                            
+                                                    </div>
+                                                    
+                                                    <script>
+
+                                                        $(document).ready(function () {
+
+                                                            videojs('bc-player-5631204428001').ready(function () {
+
+                                                                var myPlayer = this,
+                                                                    wrapPlayer = $(myPlayer).parent(),
+                                                                    ePlayer = myPlayer.el(),
+                                                                    playing = false,
+                                                                    started = false,
+                                                                    duration = 0,
+                                                                    complete = false,
+                                                                    qualified_view = false,
+                                                                    tbox = $("#bc-player-5631204428001").parent().parent().find('.title-box'),
+                                                                    btnbox = $("#bc-player-5631204428001").parent().parent().find('.btn-box'),
+                                                                    plbox = $("#bc-player-5631204428001").parent().find('.playlist-wrapper');
+
+                                                                ePlayer.addEventListener("mouseover", onPlayerMouseOver);
+                                                                ePlayer.addEventListener("mouseout", onPlayerMouseOut);
+
+                                                                function onPlayerMouseOver() {
+
+                                                                    if (started && $(tbox).css('bottom') === '0px') {
+                                                                        $(tbox).hide();
+                                                                    }
+                                                                    if (playing) {
+                                                                        $(btnbox).hide(); // leaving button hide out for now, they will only show if video is stopped
+                                                                    }
+                                                                }
+
+                                                                function onPlayerMouseOut() {
+
+                                                                    if (!playing && $(tbox).css('bottom') === '0px') {
+                                                                        $(tbox).show();
+                                                                    }
+                                                                    if (!playing)
+                                                                        $(btnbox).show();
+                                                                }
+
+                                                                // handle conflicts with other players playing simultaneously
+                                                                $("#bc-player-5631204428001").on("bcPlayer:playbackStarted", function (e, id) {
+
+                                                                    var bc_id = "5631204428001";
+                                                                    if (bc_id !== id) {
+                                                                        myPlayer.pause();
+                                                                    }
+
+                                                                });
+
+                                                                myPlayer.on("play", function () {
+
+                                                                    // stop other players when this player starts
+                                                                    $('video').trigger("bcPlayer:playbackStarted", "5631204428001");
+                                                                    
+                                                                                                                                        if ($(tbox).css('bottom') === '0px') {
+                                                                        $(tbox).fadeOut();
+                                                                    }
+                                                                    $(btnbox).fadeOut();
+                                                                    $(plbox).fadeOut(500);
+                                                                    //tracking
+                                                                    if (!started && dataLayer) {
+                                                                        //console.log("dataLayer: watched...");
+                                                                        dataLayer.push({
+                                                                            'event': 'customEvent',
+                                                                            'eventCategory': 'video playback',
+                                                                            'eventAction': 'watched',
+                                                                            'eventLabel': 'started'
+                                                                        });
+                                                                    }
+                                                                    playing = true;
+                                                                    started = true;
+                                                                });
+
+                                                                myPlayer.on("pause", function () {
+                                                                    playing = false;
+                                                                    if ($(tbox).css('bottom') === '0px') {
+                                                                        $(tbox).fadeIn();
+                                                                    }
+                                                                    $(btnbox).fadeIn();
+                                                                    $(plbox).fadeIn(500);
+                                                                });
+
+                                                                myPlayer.on('timeupdate', function (evt) {
+
+                                                                    //console.log("Evt: ", myPlayer.currentTime(), " Dur: ", Math.floor(duration));
+                                                                    // tracking
+                                                                    if (dataLayer && myPlayer.currentTime() > 15 && !qualified_view) {
+                                                                        qualified_view = true;
+                                                                        //console.log("dataLayer: qualified view...");
+                                                                        dataLayer.push({
+                                                                            'event': 'customEvent',
+                                                                            'eventCategory': 'video playback',
+                                                                            'eventAction': 'watched',
+                                                                            'eventLabel': 'qualified view'
+                                                                        });
+                                                                    }
+
+                                                                    // Track the completion of the current video
+                                                                    if (Math.ceil(myPlayer.currentTime()) >= Math.floor(duration) && complete === false && duration !== 0) {
+                                                                        // Player has reached end of video playback
+                                                                        complete = true;
+                                                                        dataLayer.push({
+                                                                            'event': 'customEvent',
+                                                                            'eventCategory': 'video playback',
+                                                                            'eventAction': 'watched',
+                                                                            'eventLabel': 'complete'
+                                                                        });
+                                                                    }
+
+                                                                });
+
+                                                                myPlayer.on('loadstart', function () {
+                                                                    // set duration/length of vid
+                                                                    //console.log('mediainfo', myPlayer.mediainfo.duration);
+                                                                    duration = myPlayer.mediainfo.duration;
+                                                                });
+                                                                
+                                                                
+                                                            });
+
+                                                        });
+                                                    
+                                                    </script>
+                                                    
+                                                                                                    
+                                                                                                                                                
+                                                                                                                                                                                                                                                    <div class="btn-box"></div>
+                                                                                            
+                                            </div>
+                                            
+                                                                                                                                        <div class="title-box">
+                                                                                                            <div class="title dotdotdot"></div>
+                                                        <h4 class="title dotdotdot">Rise of the Artificial Moon</h4>
+                                                                                                                                                            </div>
+                                                                                    
+                                        </div>
+                                    </div>
+                                    
+                                                                    
+                                                            
+                            </div>
+                        
+                        </div>
+                    
+                                        
+                    <script>
+
+                        var arr_loop_count = [];
+
+
+                        $(document).ready(function () {
+
+                            // keep track of total items in a layer for loader display
+                            arr_loop_count['layer-1'] = $('.layer--1 .item-content').length;
+
+                            // Show content once all elements are loaded
+                            function check_content_loaded(arr_key, target) {
+
+                                //console.log("Content Loaded Check: ", arr_key, " arr_loop_count: ", arr_loop_count);
+
+                                arr_loop_count[arr_key]--;
+
+                                if (arr_loop_count[arr_key] == 0) {
+
+                                    //console.log("*************Content Loaded Target: ", $(target).attr('class'));
+
+                                    $(target)
+                                        .find('.multi-content').slideDown({
+                                        duration: 500,
+                                        easing: 'swing'
+                                    }).end()
+                                        .find('.loading').remove().end()
+                                        .find('.add_to_playlist a').click(function () {
+                                    }).end()
+                                        .find('a').not('.static-img').click(function (e) {
+                                        e.preventDefault();
+                                        $.fn.linkCheck($(this));
+
+                                    });
+
+                                }
+                                //console.log("Content Loaded Check target len: ", arr_loop_count[arr_key]);
+                            }
+
+                            function draw_media_asset(data, $target) {
+
+                                //console.log("data: ", $target);
+
+                                var $html = '',
+                                    player_mode = ($.fn.isLoggedIn()) ? '?fullplayer=feature' : '?fullplayer=preview';
+
+                                // clear out player mode if article types
+                                if (data.type === "article") {
+                                    player_mode = "";
+                                } else if (data.feature && data.feature.isFree === true) {
+                                    player_mode = '?fullplayer=feature';
+                                }
+
+                                /* -- Start Main Content Box --*/
+                                // Artwork
+                                var image_url = '';
+
+                                if (data.type === "product_video" || data.type === "product_series") {
+                                    image_url = data.keyart_16x9_withtext.keyart_864x486;
+                                } else if (data.type === "article") {
+                                    image_url = data.article_main_image.article_1070x602;
+                                }
+
+                                if (image_url) {
+
+                                    if($target.attr('data-type') === 'bc'){
+
+                                        setTimeout(function(){
+                                            $target.find('video').attr('poster', image_url).end()
+                                                .find('.vjs-poster').css('background-image', 'url(' + image_url + ')');
+                                        }, 250);
+
+                                    } else {
+
+                                        $target.find('.image-box img').attr('src', image_url);
+                                        // add image link if exists
+                                        if (data.path) {
+                                            $target.find('.image-box img').wrap('<a href="/' + data.path + player_mode + '" target="_blank"></a>');
+                                        }
+
+                                    }
+
+                                }
+
+                                // Article Icon
+                                if (data.type === "article") {
+                                    var icon_html = '';
+                                    if (data.path) {
+                                        icon_html = '<a href="/' + data.path + '" target="_blank">';
+                                    }
+                                    icon_html += '<div class="article-icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></div>';
+                                    if (data.path) {
+                                        icon_html += '</a>';
+                                    }
+                                    $target.find('.main-box').append(icon_html);
+                                }
+
+                                // Free Banner
+                                if (!$.fn.isLoggedIn() && data.feature && data.feature.isFree === true) {
+                                    $target.find('.main-box').append('<div class="free-box">FREE</div>');
+                                }
+
+                                // Buttons
+                                if (data.type === "product_video") {
+
+                                    if ($target.attr('data-type') === 'nid' || $target.attr('data-type') === 'sid') {
+                                        $target.find('.btn-box').append('<div class="play-btn"><a title="PLAY NOW" href="/' + data.path + player_mode + '" target="_blank"><i class="fa fa-play" aria-hidden="true"></i></a></div>')
+                                    }
+                                    $target.find('.btn-box').append('<div class="details-btn"><a title="MORE DETAILS" href="/' + data.path + '" target="_blank"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a></div>');
+
+                                    // Add/Remove Playlist Item
+                                    if ($.fn.isLoggedIn()) {
+
+                                        $target.find('.btn-box')
+                                            .append('<div class="playlist-btn"><a title="ADD TO PLAYLIST" target="_blank"><i class="fa fa-plus" aria-hidden="true"></i></a></div>').end()
+                                            .find('.playlist-btn')
+                                            .click(function () {
+
+                                                var pnid = $(this).closest('.item-content').attr('data-value'),
+                                                    ptitle = $target.find('.title-box .title:first-child').text();
+
+                                                if ($(this).find('i').hasClass('fa-plus')) {
+                                                    // add to playlist
+                                                    $(this).playlistUtils('add', pnid, ptitle);
+                                                } else {
+                                                    // remove from playlist
+                                                    $(this).playlistUtils('remove', pnid, ptitle);
+                                                }
+                                            })
+                                            .on("playlist:updatePlaylist", function (e) {
+
+                                                var pnid = $target.attr('data-value');
+
+                                                $(this).playlistUtils('exists', pnid, function (exists) {
+
+                                                    if (exists) {
+                                                        $target.find('.btn-box')
+                                                            .find('.playlist-btn i')
+                                                            .removeClass('fa-plus')
+                                                            .addClass('fa-minus')
+                                                            .end()
+                                                            .find('.playlist-btn').attr('title', 'REMOVE FROM PLAYLIST');
+
+                                                    } else {
+                                                        $target.find('.btn-box')
+                                                            .find('.playlist-btn i')
+                                                            .removeClass('fa-minus')
+                                                            .addClass('fa-plus')
+                                                            .end()
+                                                            .find('.playlist-btn').attr('title', 'ADD TO PLAYLIST');
+                                                    }
+
+                                                });
+
+                                            })
+                                            .on("playlist:addedItem", function (e, nid) {
+
+                                                //console.log("addedItem event: closest-> ",$target.closest('.item-content').attr('data-value'), " nid-> ", nid);
+                                                if ($target.closest('.item-content').attr('data-value') === nid) {
+                                                    var msg = "Item has been added to your playlist.";
+                                                    $target.find('.alert-info').text(msg).fadeIn('slow').delay('2000').fadeOut('slow');
+                                                }
+
+                                            })
+                                            .on("playlist:removedItem", function (e, nid) {
+
+                                                if ($target.closest('.item-content').attr('data-value') === nid) {
+                                                    var msg = "Item has been removed from your playlist.";
+                                                    $target.find('.alert-info').text(msg).fadeIn('slow').delay('2000').fadeOut('slow');
+                                                }
+
+                                            });
+
+                                    } else {
+
+                                        //console.log("not logged in plist...");
+
+                                    }
+
+                                } else if (data.type === "article") {
+                                    $target.find('.btn-box').append('<div class="details-btn"><a title="MORE DETAILS" href="/' + data.path + '" target="_blank"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a></div>');
+                                }
+
+                                /* -- Start Title Box -- */
+                                // Content Details based on media type
+                                if (data.type === "product_video") {
+
+                                    // Series
+                                    if (data.series && data.series.path) {
+                                        $target.find('.title-box').append('<div class="title"><a href="/' + data.series.path + '" target=_blank>' + data.series.title + '</a></div>');
+                                    } else if (data.series) {
+                                        $target.find('.title-box').append('<div class="title">' + data.series.title + '</div>');
+                                    }
+
+                                    // Content Title
+                                    if (data.title && data.path) {
+                                        $target.find('.title-box').append('<h4 class="title dotdotdot"><a href="/' + data.path + '" target=_blank>' + data.title + '</a></h4>');
+                                    } else if (data.title) {
+                                        $target.find('.title-box').append('<h4 class="title dotdotdot">' + data.title + '</h4>');
+                                    }
+
+                                    // Season #
+                                    if (data.fields.season && data.fields.season[0].value) {
+                                        $target.find('.title-box').append('<div class="details">S' + data.fields.season[0].value + ':Ep' + data.fields.episode[0].value + '</div>');
+                                    }
+                                    // Episode #
+                                    if (!data.fields.season && data.fields.episode && data.fields.episode[0].value) {
+                                        $target.find('.title-box').append('<div class="details">Episode: ' + data.fields.episode[0].value + '</div>');
+                                    }
+                                    // Duration
+                                    if (data.feature && data.feature.duration) {
+                                        var seconds = data.feature.duration;
+                                        var date = new Date(seconds * 1000);
+                                        var hh = date.getUTCHours();
+                                        var mm = date.getUTCMinutes();
+                                        var ss = date.getSeconds();
+                                        var dur = '';
+                                        //if (hh < 10) hh = "0" + hh;
+                                        if (mm < 10) mm = "0" + mm;
+                                        if (ss < 10) ss = "0" + ss;
+                                        if (hh > 1) {
+                                            dur += hh + " hrs, ";
+                                        } else if (hh > 0) {
+                                            dur += hh + " hr, ";
+                                        }
+                                        dur += mm + " mins";
+                                        $target.find('.title-box').append('<div class="duration">' + dur + '</div>');
+                                    }
+
+                                } else if (data.type === "article") {
+
+                                    // Author
+                                    //$html += '      <div class="title">' + data.article_author.name + '</div>';
+                                    /* TODO: Look for usage case for above ... */
+
+                                    // Publish Date (Creation Date)
+                                    if (data.created) {
+                                        var d = new Date(0);
+                                        d.setUTCSeconds(data.created);
+                                        var arr_months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                                        $target.find('.title-box').append('<div class="title">' + arr_months[d.getMonth()] + ' ' + d.getDay() + ', ' + d.getFullYear() + '</div>');
+                                    }
+
+                                    // Content Title
+                                    if (data.title && data.path) {
+                                        $target.find('.title-box').append('<h4 class="title dotdotdot"><a href="/' + data.path + '" target=_blank>' + data.title + '</a></h4>');
+                                    } else if (data.title) {
+                                        $target.find('.title-box').append('<h4 class="title dotdotdot">' + data.title + '</h4>');
+                                    }
+
+                                    // Description
+                                    if (data.fields.body && data.fields.body[0].value) {
+                                        var desc = data.fields.body[0].value;
+                                        // ensure the shorten the text
+                                        desc = $.trim(desc).substring(0, 155).split(" ").slice(0, -1).join(" ") + "...";
+                                        $target.find('.title-box').append('<div class="details">' + desc + '</div>');
+                                    }
+                                }
+                            }
+
+                            function getAPIData(purl, callback) {
+
+                                //console.log("getAPIData purl: ", purl);
+
+                                $.ajax({
+                                    method: "GET",
+                                    url: purl,
+                                    dataType: 'json',
+                                    success: function (data, textStatus, jqXHR) {
+
+                                        //console.log("multi content getAPIData: ", data);
+
+                                        // determine the series episode id
+                                        if (data) {
+                                            callback(data);
+                                        } else {
+                                            callback();
+                                        }
+
+                                        //console.log("Data: ", data);
+                                        //check_content_loaded('layer-{ { loop.index0 }}', $('.layer--{ { loop.index0 }}'));
+
+                                    },
+                                    error: function (jqXHR, textStatus, errorThrown) {
+                                        console.log("Error: ", textStatus, " errorThrown: ", errorThrown);
+
+                                        // if fail, continue load process
+                                        check_content_loaded('layer-1', $('.layer--1'));
+                                    }
+
+                                });
+
+                            }
+
+                            function build_UI() {
+
+                                // Loop and load all elements in U block
+                                $('.layer--1 .item-content').each(function () {
+
+                                    //console.log("Element/Layer Data value: ", $(this).attr('data-value'));
+
+                                    var $target = $(this),
+                                        $html = '',
+                                        player_mode = ($.fn.isLoggedIn()) ? '?fullplayer=feature' : '?fullplayer=preview',
+                                        api_url = "https://brooklyn.gaia.com";
+
+                                    if ($(this).attr('data-value')) {
+
+                                        //console.log("switch Data Type: ", $(this).attr('data-type'));
+
+                                        switch ($(this).attr('data-type')) {
+
+                                            case 'sid':
+
+                                                //$target.addClass('.loading');
+
+                                                var purl = api_url + "/v2/videos/series/" + $(this).attr('data-value') + "/featured";
+
+                                                // first we have to get the NID of target episode
+                                                getAPIData(purl, function (pdata) {
+
+                                                    if (pdata) {
+
+                                                        // console.log("Series Obj: ", pdata);
+                                                        // console.log("Featured NID: ", pdata.featuredVideo.id);
+
+                                                        if (pdata.featuredVideo && pdata.featuredVideo.id)
+                                                            $target.attr('data-value', pdata.featuredVideo.id);
+
+                                                        var nurl = api_url + "/node/" + pdata.featuredVideo.id;
+                                                        getAPIData(nurl, function (ndata) {
+
+                                                            if (ndata) {
+
+                                                                //console.log("fNID Data: ", ndata);
+                                                                draw_media_asset(ndata, $target);
+
+                                                            } else {
+                                                                console.log("WARNING: No nid data was returned. Data undefined...");
+                                                            }
+
+                                                        });
+
+                                                    } else {
+                                                        console.log("WARNING: No sid data was returned. Data undefined...");
+                                                    }
+
+                                                    check_content_loaded('layer-1', $('.layer--1'));
+
+                                                });
+
+                                                break;
+
+                                            case 'nid': // Node ID from Gaia Drupal CMS
+
+                                                var purl = api_url + "/node/" + $(this).attr('data-value');
+                                                getAPIData(purl, function (pdata) {
+
+                                                    if (pdata) {
+
+                                                        //console.log("Normal NID: ",pdata);
+                                                        draw_media_asset(pdata, $target);
+
+                                                    } else {
+                                                        console.log("WARNING: No nid data was returned. Data undefined...");
+                                                    }
+
+                                                    check_content_loaded('layer-1', $('.layer--1'));
+
+                                                });
+
+                                                break;
+
+                                            case 'yt':  // youtube content
+
+                                                check_content_loaded('layer-1', $('.layer--1'));
+                                                break;
+
+                                            case 'bc':  // brightcove content
+
+                                                if ($(this).attr('data-value')) {
+
+                                                    var purl = api_url + "/node/" + $(this).attr('data-value');
+                                                    getAPIData(purl, function (pdata) {
+
+                                                        if (pdata) {
+                                                            // console.log("Normal NID: ",pdata);
+                                                            draw_media_asset(pdata, $target);
+
+                                                        } else {
+                                                            console.log("WARNING: No nid data was returned. Data undefined...");
+                                                        }
+
+                                                        check_content_loaded('layer-1', $('.layer--1'));
+
+                                                    });
+                                                }
+
+                                                break;
+
+                                            case 'img': // static images
+
+                                                check_content_loaded('layer-1', $('.layer--1'));
+                                                break;
+
+                                        }
+
+                                    } else {
+                                        console.log("WARNING: data id was not found for this content.");
+                                        check_content_loaded('layer-1', $('.layer--1'));
+                                    }
+
+                                });
+
+                            }
+
+                            build_UI();
+
+                            //console.log("Content Loaded Check  arr_loop_count: ", arr_loop_count);
+
+                        });
+                    
+                    </script>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                                                                                                                <div class="layer layer--2 blocks    layer-show"  id=""  style=" padding:30px 0px; margin-top:0px; margin-bottom:0px; ">
+                    <div class="container">
+                        <div class="row">
+
+                                                            <div class="block col-md-12 offset-md-0 "  id=""  style=" ">
+
+                                    
+                                                                                    <div >
+                                                <p>What they found was that the moon rings like a bell, reverberating sometimes for hours at a time. Not knowing much about the moon’s material composition, NASA and the Apollo astronauts were astounded by what they heard and the results that it entailed. Clearly the moon’s density was significantly less than the Earth’s.</p>
+<p>The Moon is a little more than one-quarter of the size of Earth, another bizarre characteristic compared to any other natural satellite in our cosmic region. Of all the moons in the solar system, ours is the 5<sup>th</sup> largest. No other planet that we’re aware of has a moon that is as proportionately big as ours. All other planets with moons that size are massive gas giants. Neptune, the closest in size with a moon that big, is four times the size of Earth.</p>
+<p>The moon is about 2,100 miles in diameter, compared to the Earth’s nearly 8,000-mile diameter, yet the mass of the moon is only 1.2 percent of Earth&#8217;s, while the volume of the moon is <a href="https://www.universetoday.com/20489/moon-compared-to-earth/">only 2 percent of Earth’s.</a></p>
+<p>After NASA conducted these tests, it concluded that the moon has a similar composition to our planet, although significantly less dense, with a 31-mile crust of mineral plagioclase, a mantle of olivine and pyroxene, and a very small core of Iron and Sulphur. But when the Apollo astronauts first landed on the moon, they had difficulty drilling into the surface of the craters, which are anomalies in themselves.</p>
+<p>Craters are thought to be the result of meteorite and asteroid impacts, meaning there should be a certain proportion between their depth and width. Instead many wider craters have similar depths to significantly narrower craters, with some even appearing convex. And when astronauts attempted to drill into the craters, they were barely able to penetrate the surface, discovering processed metals like brass, mica, and pure titanium.</p>
+<p>&nbsp;</p>
+<p><img class="aligncenter wp-image-9777 size-large" title="astronaut on moon" src="https://marketing.gaia.com/wp-content/uploads/apollo-astronaut-1024x678.jpg" alt="astronaut on moon" width="870" height="576" srcset="https://marketing.gaia.com/wp-content/uploads/apollo-astronaut-1024x678.jpg 1024w, https://marketing.gaia.com/wp-content/uploads/apollo-astronaut-300x199.jpg 300w, https://marketing.gaia.com/wp-content/uploads/apollo-astronaut-768x509.jpg 768w" sizes="(max-width: 870px) 100vw, 870px" /></p>
+
+                                            </div>
+                                                                                                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                                                                                                <div class="layer layer--3 blocks    layer-show"  id=""  style=" padding:30px 0px; margin-top:0px; margin-bottom:0px; ">
+                    <div class="container">
+                        <div class="row">
+
+                                                            <div class="block col-md-12 offset-md-0 "  id=""  style=" ">
+
+                                    
+                                                                                    <div >
+                                                <h2><strong>The Moon is a Spaceship; A Secret Moon Base?</strong></h2>
+<p>In 1970, two Soviet astronomers had been studying the satellite and theorized that it was likely a hollow moon put in place by a highly-advanced extraterrestrial race. Their theory was based on these observable anomalies, claiming the Moon was an artificial shell that had been <a href="http://www.thelivingmoon.com/47john_lear/02files/Earths_Moon_and_Human_Evolution.html">inhabited internally for years.</a></p>
+<p>While it might seem farfetched that we are being surveilled by an extraterrestrial race on the moon, or that a hollow Moon may have been intentionally placed in Earth’s orbit as a secret moon base, there are a plethora of inexplicable facts about its relationship with Earth. To this day, there are several theories that attempt to explain how the Moon ended up orbiting our planet, though none have been absolutely accepted, leading many to believe that <a href="https://www.gaia.com/video/who-built-moon">the moon is a spaceship.</a></p>
+<p>&nbsp;</p>
+<p><img class="aligncenter wp-image-9778 size-large" src="/wp-content/uploads/moon-orbit-1024x576.jpg" alt="hollow-moon" width="1024" height="576" srcset="https://marketing.gaia.com/wp-content/uploads/moon-orbit-1024x576.jpg 1024w, https://marketing.gaia.com/wp-content/uploads/moon-orbit-300x169.jpg 300w, https://marketing.gaia.com/wp-content/uploads/moon-orbit-768x432.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>&nbsp;</p>
+<p>Without the moon orbiting precisely where it is, it’s possible that life on Earth wouldn’t exist, or at least wouldn’t have evolved to the point that it has. In fact, it is estimated that less than 10 percent of all terrestrial planets in the universe have an Earth to moon ratio like ours, which provides the stability that is necessary to maintain a climate that can harbor life.</p>
+<p>The size of the moon is such that it affects our axial tilt or the way that the Earth wobbles on its axis, changing by a single degree over the course of thousands of years. This relegation to one degree of movement is necessary for climatic stability; without the moon&#8217;s balance, the Earth could tilt as much as 85 degrees every million years or so, causing drastic changes.</p>
+<p>This would adjust the orientation of the Earth to the Sun so significantly that the Sun would shift to be situated directly over the poles rather than the equator where it currently is. Life could not evolve during such radical shifts.</p>
+<h2><strong>Is the Moon Artificial?</strong></h2>
+<p>There are two ways that planets typically acquire moons, through accretion or capture. The process of capturing a moon is just like it sounds, a moon will drift into the orbit of a planet and become trapped in its gravitational field.</p>
+<p>In the process of accretion, a moon is formed at the same time as the planet from the accretion disk of the solar system. But this theory has been widely dismissed due to the differences in core composition and the fact that the moon is almost a billion years older than the Earth. In fact, the mineral composition of rocks found on the surface of the moon varies drastically from those found on Earth.</p>
+<p>The abundance of titanium is one example of such an anomaly, with certain lunar samples containing up to 10 percent of this precious mineral; the highest abundance of titanium-rich minerals on Earth has never exceeded 1 percent. There are other processed metals found on the moon like mica and brass, as well as the presence of radioactive elements like Uranium-236 and Neptunium, none of which are found naturally on Earth.</p>
+<p>These moon rocks brought back from the Apollo missions, presented another surprise; they were magnetized. Scientists were baffled, having previously assumed that the moon never had a magnetic field. The Earth’s magnetism is thought to be the product of an internal dynamo, in which the rotating, convecting, and electrically conducting liquid iron in the core generates the field. However, the moon wasn&#8217;t believed to have a core large enough to generate this type of dynamo mechanism.</p>
+<p>&nbsp;</p>
+<h2><strong>Hollow Moon Proof?</strong></h2>
+<p><a href="https://doowansnewsandevents.wordpress.com/tag/zulu-mythology-about-the-moon/">According to Zulu legend,</a> our hollow moon was put in place by two brothers with scaly, fish-like skin. The legend tells of Wowane and Mpanku, who brought the moon to Earth after stealing it from a great fire dragon. They are said to have emptied out the egg-like satellite of its &#8216;yolk,&#8217; subsequently placing it in orbit around the Earth. Prior to this, the planet was said to have been shrouded in a sheath of watery mist, which came raining down to Earth once the moon came into orbit.</p>
+<p>&nbsp;</p>
+<p><img class="aligncenter wp-image-9779 size-large" src="/wp-content/uploads/AC_Fish-god_Nimrud_Figure_Near_Entrance_Quyunjik_nypl.digitalcollections.510d47dc-4727-a3d9-e040-e00a18064a99.001.v-1024x740.jpg" alt="hollow moon" width="1024" height="740" srcset="https://marketing.gaia.com/wp-content/uploads/AC_Fish-god_Nimrud_Figure_Near_Entrance_Quyunjik_nypl.digitalcollections.510d47dc-4727-a3d9-e040-e00a18064a99.001.v-1024x740.jpg 1024w, https://marketing.gaia.com/wp-content/uploads/AC_Fish-god_Nimrud_Figure_Near_Entrance_Quyunjik_nypl.digitalcollections.510d47dc-4727-a3d9-e040-e00a18064a99.001.v-300x217.jpg 300w, https://marketing.gaia.com/wp-content/uploads/AC_Fish-god_Nimrud_Figure_Near_Entrance_Quyunjik_nypl.digitalcollections.510d47dc-4727-a3d9-e040-e00a18064a99.001.v-768x555.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>&nbsp;</p>
+<p>Some believe that this deluge of water may be a reference to the great flood that destroyed the antediluvian civilizations. The two brothers mentioned also bear <a href="https://www.gaia.com/video/gnostic-origins">similar characteristics to Enki and Enlil of ancient Sumerian lore,</a> who was responsible for instituting the first civilizations of man and are often depicted wearing fish garb.</p>
+<p>Another strange characteristic recorded on the moon from one of Apollo 14’s ALSEPs was the presence of a cloud of water vapor on the moon. After 40 years, NASA reported finding the presence of water in rock samples brought back from these missions, stating that the discovery would change how we think about the moon. A further examination showed that this water had twice the levels of a deuterium isotope compared to water found on Earth. Furthermore, they said there was reason to believe that there are 600 million tons of <a href="https://gaia.com/article/water-on-moon">water trapped in craters on the moon</a>.</p>
+<p>At the time of the Apollo 14’s discovery of water vapor, NASA claimed that it was the result of ruptured water tanks that had leaked Earth water into the atmosphere. <a href="http://humansarefree.com/2013/12/who-parked-moon-in-perfect-circular.html">This cloud of vapor</a> covered 100 square miles and lingered for 14 hours before dissipating, making NASA&#8217;s explanation improbable, considering the tanks they were referring to only contained between 60-100 pounds of water.</p>
+<p>NASA also claimed that the water from the ruptured tanks simultaneously burst, though they were over 100 miles apart. Why would they make such an absurd claim and why did it take 40 years to analyze and discover water in these rock samples brought back from the Apollo missions?</p>
+<p>Could the water be coming from an internal source, perhaps one that NASA doesn’t want us to know about?</p>
+
+                                            </div>
+                                                                                                            </div>
+                                                    </div>
+                    </div>
+                </div>
+                        
+                </div>
+
+                                <div class="col-lg-4 right-col">
+
+                    <hr>
+
+                                        
+    
+    <div class="row article-topics">
+
+        <div class="col-12">
+
+            <h4>Keep Reading</h4>
+
+            <ul class="topics-list">
+                                    <li class="topics-item">
+                        <h5><a class="topics-item__link" href="/articles/seeking-truth" target="_self">Seeking Truth</a></h5>
+                    </li>
+                                    <li class="topics-item">
+                        <h5><a class="topics-item__link" href="/articles/seeking-truth/secrets-and-cover-ups" target="_self">Secrets And Cover Ups</a></h5>
+                    </li>
+                                    <li class="topics-item">
+                        <h5><a class="topics-item__link" href="/articles/seeking-truth/secrets-and-cover-ups/secret-space-program" target="_self">Secret Space Program</a></h5>
+                    </li>
+                            </ul>
+        </div>
+
+    </div>
+
+
+                    <hr>
+
+                                            
+        
+    <div class="row article--recommended">
+
+        <div class="col-12">
+            <h4>Related Articles</h4>         </div>
+        
+                    <div class="content-post col-12">
+                
+                <article>
+                    
+                    <a class="click-track" href="/article/deeper-space-episode-1" target="_self">
+    
+                        <div class="post-tile">
+                            <div class="post-tile__page-curl"></div>
+                            <div class="embed-responsive embed-responsive-16by9 ">
+                                
+                                <div class="embed-responsive-item ">
+                                                                            <img src="/wp-content/uploads/128741_ds_s1e3_the-german-flying-saucers_cvr1-e1550707663404.jpg" alt="Deeper Space: Episode 1"/>
+                                                                    </div>
+                            
+                            </div>
+                        </div>
+    
+                        <div class="post-tile__title post-tile__title--recommended">
+                            <div class="post-tile__title-bg post-tile__title-bg--recommended">Deeper Space: Episode 1</div>
+                        </div>
+                        
+                        <div class="post-tile__time post-tile__time--recommended" >
+                            <div class="post-tile__time-bg post-tile__time-bg--recommended" datetime="1489444474">March 13, 2017</div>
+                        </div>
+                        
+                    </a>
+                
+                </article>
+            
+            </div>
+            
+                    <div class="content-post col-12">
+                
+                <article>
+                    
+                    <a class="click-track" href="/article/deeper-space-episode-5" target="_self">
+    
+                        <div class="post-tile">
+                            <div class="post-tile__page-curl"></div>
+                            <div class="embed-responsive embed-responsive-16by9 ">
+                                
+                                <div class="embed-responsive-item ">
+                                                                            <img src="/wp-content/uploads/128571_ds_s1_deep-space_cvr-e1550707351423.jpg" alt="Deeper Space: Episode 5"/>
+                                                                    </div>
+                            
+                            </div>
+                        </div>
+    
+                        <div class="post-tile__title post-tile__title--recommended">
+                            <div class="post-tile__title-bg post-tile__title-bg--recommended">Deeper Space: Episode 5</div>
+                        </div>
+                        
+                        <div class="post-tile__time post-tile__time--recommended" >
+                            <div class="post-tile__time-bg post-tile__time-bg--recommended" datetime="1491849925">April 10, 2017</div>
+                        </div>
+                        
+                    </a>
+                
+                </article>
+            
+            </div>
+            
+                    <div class="content-post col-12">
+                
+                <article>
+                    
+                    <a class="click-track" href="/article/lifeforms-martian-rocks" target="_self">
+    
+                        <div class="post-tile">
+                            <div class="post-tile__page-curl"></div>
+                            <div class="embed-responsive embed-responsive-16by9 ">
+                                
+                                <div class="embed-responsive-item ">
+                                                                            <img src="/wp-content/uploads/iStock-838938056-e1550614107464.jpg" alt="NASA's Curiosity Rover May Have Found Fossils on Mars"/>
+                                                                    </div>
+                            
+                            </div>
+                        </div>
+    
+                        <div class="post-tile__title post-tile__title--recommended">
+                            <div class="post-tile__title-bg post-tile__title-bg--recommended">NASA's Curiosity Rover May Have Found Fossils on Mars</div>
+                        </div>
+                        
+                        <div class="post-tile__time post-tile__time--recommended" >
+                            <div class="post-tile__time-bg post-tile__time-bg--recommended" datetime="1515452352">January 8, 2018</div>
+                        </div>
+                        
+                    </a>
+                
+                </article>
+            
+            </div>
+            
+                    <div class="content-post col-12">
+                
+                <article>
+                    
+                    <a class="click-track" href="/article/secret-space-programs-and-breakaway-civilizations" target="_self">
+    
+                        <div class="post-tile">
+                            <div class="post-tile__page-curl"></div>
+                            <div class="embed-responsive embed-responsive-16by9 ">
+                                
+                                <div class="embed-responsive-item ">
+                                                                            <img src="/wp-content/uploads/article-migration-image-secret-space-program-breakaway-civilizations.jpg" alt="Secret Space Programs and Breakaway Civilizations"/>
+                                                                    </div>
+                            
+                            </div>
+                        </div>
+    
+                        <div class="post-tile__title post-tile__title--recommended">
+                            <div class="post-tile__title-bg post-tile__title-bg--recommended">Secret Space Programs and Breakaway Civilizations</div>
+                        </div>
+                        
+                        <div class="post-tile__time post-tile__time--recommended" >
+                            <div class="post-tile__time-bg post-tile__time-bg--recommended" datetime="1476486054">October 14, 2016</div>
+                        </div>
+                        
+                    </a>
+                
+                </article>
+            
+            </div>
+            
+            
+        <script>
+            $(document).ready(function() {
+                $('.recommendations a').click(function (event) {
+                    event.preventDefault();
+                    dataLayer.push({
+                        'event': 'customEvent',
+                        'eventCategory': 'user engagement',
+                        'eventAction': 'select article',
+                        'eventLabel': 'article recommendation'
+                    });
+                });
+            });
+        </script>
+    
+    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Social Sharing -->
+        <div class="container">
+            <hr>
+            <div class="social-share social-share--bottom">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <h5 class="social-share__header">Share this article</h5>
+                    </div>
+                    <div class="col-auto">
+                        <div class="addthis_inline_share_toolbox_ymbu social-share__widget social-share__widget--bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                                        <div id="" class="layer blocks layer-hide-logged-in lead-gen">
+    <div class="container-fluid lead-gen__container">
+        <div class="row">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="block col-md-12 col-lg-6">
+                        <h2 class="lead-gen__header">Never miss a metaphysical beat.</h2>
+                    </div>
+                    <div class="block col-md-12 col-lg-6">
+                        <h5 class="lead-gen__header--sub">We’ll send you our best articles, free videos & exclusive offers, every week.</h5>
+                                
+    <div id="" class="lead-gen__layer-template-level form-container signup_form" style="text-align:center;">
+                                    
+        <form class="gaia_form emarsys-form lead-gen__form">
+            <input type="hidden" name="FORM_NAME" value="BR_ARTICLE" />
+                        
+                        
+            <input type="hidden" name="SITE_SEGMENT" value="ST" />
+                                                <div class="row justify-content-center">
+                                                
+                                
+                                                    <div class="landscape col-12 col-sm-auto">
+                        <input type="email" class="form-control email" maxlength="75" name="EMAIL_ADDRESS_" placeholder="Email Address" required />
+                    </div>
+                                                <div class="landscape col-12 col-sm-auto">
+                    <input type="submit" class="form-control btn btn--primary" value="yes! sign me up." />
+                </div>
+                                <div class="col-12 landscape">
+                    <label class="cb-container">I would like to sign up to receive emails from Gaia.
+                        <input type="checkbox" id="email-`opt-in`" required>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+        </form>
+                <div class="message" data-success-override="Thanks!"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var target = $('.lead-gen__layer-template-level, .lead-gen__layer-template'),
+                member_email = false;
+
+            // Member email pre-populated status handler
+            
+            $(target).find('form')
+                .submit(function (e) {
+                    e.preventDefault();
+                    // Be sure to always hide the message if a user submits from a previous error display
+                    $(target).find('.message').fadeOut('fast', function () {
+                        $(this).removeClass('error');
+                    });
+                    // Update page URL
+                    $("input[name=PAGE_URL]").val(window.location.href);
+                    $(target).find('input[type="submit"]').prop("disabled", true);
+                    // Call Emarsys Email Capture
+                    $.fn.emarsysEmailCap($(target), member_email);
+                    return false;
+                });
+        });
+    </script>
+
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        
+
+                <div class="layer blocks layer-hide-logged-in">
+            <div class="container-fluid" >
+                <div class="row">
+                    <div class="col-12">
+                                                            <div id="pricing_options" class="row justify-content-center subscribe-widget">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-8">
+                <h2 class="subscribe-widget__text">Elevate your consciousness</h2>
+                <div class="subscribe-widget__text subscribe-widget__text--light">with a free trial of Gaia</div>
+            </div>
+            <div class="col-md-4 subscribe-widget__cta-container">
+                <a href="/plan-selection?language[]=en" target="_self" class="btn subscribe-widget__cta">Start Your Trial</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Webapp Footer -->
+        <footer class="footer-webapp">
+
+    <div class="layer blocks">
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-webapp__nav">
+    <div class="container">
+        <div class="row">
+            <div class="footer-webapp__nav-column col-12 col-md-6 col-lg-3">
+                    <ul class="d-flex flex-column nav-footer-ul">
+                        <li class="footer__menu-title"><a href="#"><h6 class="footer-webapp__title">Gaia</h6></a></li><li class="footer-webapp__link"><a href="/lp/about" target="_self">About Gaia</a></li><li class="footer-webapp__link"><a href="https://gaiasupportcenter.zendesk.com/hc/en-us/articles/223618027-Which-devices-can-I-use-to-stream-Gaia-" target="_self">Devices</a></li><li class="footer-webapp__link"><a href="/terms-privacy#community-posting-guidelines" target="_self">Community Guidelines</a></li><li class="footer-webapp__link"><a href="/terms-privacy" target="_self">Terms of Use and Privacy</a></li><li class="footer-webapp__link"><a href="/terms-privacy#anti-spam-policy" target="_self">Spam Policy</a></li></ul>
+                        </div><div class="footer-webapp__nav-column col-12 col-md-6 col-lg-3">
+                    <ul class="d-flex flex-column nav-footer-ul">
+                        <li class="footer__menu-title"><a href="#"><h6 class="footer-webapp__title">Community</h6></a></li><li class="footer-webapp__link"><a href="https://gaiasupportcenter.zendesk.com/hc/en-us" target="_self">Help Center</a></li><li class="footer-webapp__link"><a href="/lp/careers/" target="_self">Careers</a></li><li class="footer-webapp__link"><a href="https://www.gaia.com/lp/write-for-gaia/" target="_self">Write for Gaia</a></li></ul>
+                        </div><div class="footer-webapp__nav-column col-12 col-md-6 col-lg-3">
+                    <ul class="d-flex flex-column nav-footer-ul">
+                        <li class="footer__menu-title"><a href="#"><h6 class="footer-webapp__title">More from Gaia</h6></a></li><li class="footer-webapp__link"><a href="http://ir.gaia.com/" target="_self">Investor Relations</a></li></ul>
+                        </div>
+                    
+<div class="footer-webapp__nav-column ls-select-nav col-12 col-md-6 col-lg-3">
+    
+    <h6 class="footer-webapp__title">My Language</h6>
+    
+    <section class="selector__lang">
+        
+        <div class="selector selector__container" aria-haspopup="true" aria-controls="#footer-lang-dropdown-en" aria-expanded="false" aria-label="header language select">
+            <span>English</span>
+            <img class="selector__image--icon--down" src="/wp-content/themes/gaia-marketing-layer/assets/images/icons/ls_downarrow.svg" alt="downarrow">
+            <img class="selector__image--icon--up" src="/wp-content/themes/gaia-marketing-layer/assets/images/icons/ls_arrow.svg" alt="arrow">
+        </div>
+        <div class=" selector selector__dropdown--container">
+            <div class="selector selector__dropdown--container--options">
+                <div class="selector__dropdown selector__dropdown--option  highlight">
+                    <a href="/" data-lang="en" target="_self">
+                        <span>English</span>
+                        <span class="circle  highlight"></span>
+                    </a>
+                </div>
+                <div class="selector__dropdown selector__dropdown--option ">
+                    <a href="/us/es" data-lang="es" target="_self">
+                        <span>Español</span>
+                        <span class="circle "></span>
+                    </a>
+                </div>
+                <div class="selector__dropdown selector__dropdown--option ">
+                    <a href="/us/de" data-lang="de" target="_self">
+                        <span>Deutsch</span>
+                        <span class="circle "></span>
+                    </a>
+                </div>
+                <div class="selector__dropdown selector__dropdown--option ">
+                    <a href="/us/fr" data-lang="fr" target="_self">
+                        <span>Français</span>
+                        <span class="circle "></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+
+</div>
+
+
+        </div>
+    </div>
+</div>
+<script src="/wp-content/themes/gaia-marketing-layer/assets/js/navigation/webapp-footer.min.js"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="layer blocks">
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-12">
+                            
+<div class="footer-webapp__icons">
+    <div class="container icons-container">
+        <div class="row">
+            <div class="icons-container__social-icons col-12 col-md-6 ">
+                <h6 class="icons-container__title">Connect With Us</h6>
+                <div class="icons-container__social facebook">
+                    <a target="_blank" href="http://www.facebook.com/gaia">
+                        <img class="icons-footer aligncenter" src="/wp-content/themes/gaia-marketing-layer/assets/images/apps/icon-facebook-white.svg"/>
+                    </a>
+                </div>
+                <div class="icons-container__social twitter">
+                    <a target="_blank" href="https://twitter.com/yourmothergaia">
+                        <img class="icons-footer aligncenter" src="/wp-content/themes/gaia-marketing-layer/assets/images/apps/icon-twitter-white.svg"/>
+                    </a>
+                </div>
+                <div class="icons-container__social instagram">
+                    <a target="_blank" href="http://www.instagram.com/wearegaia">
+                        <img class="icons-footer aligncenter" src="/wp-content/themes/gaia-marketing-layer/assets/images/apps/icon-instagram-white.svg"/>
+                    </a>
+                </div>
+                <div class="icons-container__social youtube">
+                    <a target="_blank" href="https://www.youtube.com/user/gaiamtv">
+                        <img class="icons-footer aligncenter" src="/wp-content/themes/gaia-marketing-layer/assets/images/apps/icon-youtube-white.svg"/>
+                    </a>
+                </div>
+                <div class="icons-container__social pinterest">
+                    <a target="_blank" href="https://www.pinterest.com/wearegaia/">
+                        <img class="icons-footer aligncenter" src="/wp-content/themes/gaia-marketing-layer/assets/images/apps/icon-pinterest-white.svg"/>
+                    </a>
+                </div>
+            </div>
+            <div class="icons-container__app-icons app-links col-12 col-md-6 ">
+                <h6 class="icons-container__title">Gaia Apps</h6>
+                <div class="icons-container__row">
+                <div class="icons-container__app ios">
+                    <a href="https://itunes.apple.com/us/app/gaia-conscious-yoga-meditation-and-spirituality/id821068605?mt=8" target="_blank">
+                        <img class="icons-footer aligncenter" src="/wp-content/themes/gaia-marketing-layer/assets/images/apps/icon-ios-black.svg"/>
+                    </a>
+                </div>
+                <div class="icons-container__app android">
+                    <a href="https://play.google.com/store/apps/details?id=com.gaiamtv&amp;hl=en" target="_blank">
+                        <img class="icons-footer aligncenter" src="/wp-content/themes/gaia-marketing-layer/assets/images/apps/icon-android-black.svg"/>
+                    </a>
+                </div>
+                <div class="icons-container__app chromecast">
+                    <a href="https://play.google.com/store/apps/details?id=com.gaiamtv&amp;hl=en" target="_blank">
+                        <img class="icons-footer aligncenter" src="/wp-content/themes/gaia-marketing-layer/assets/images/apps/icon-chromcast-black.svg"/>
+                    </a>
+                </div>
+                <div class="icons-container__app roku">
+                    <a href="https://channelstore.roku.com/details/9354/gaia" target="_blank">
+                        <img class="icons-footer aligncenter" src="/wp-content/themes/gaia-marketing-layer/assets/images/apps/icon-roku-black.svg"/>
+                    </a>
+                </div>
+                <div class="icons-container__app amazon">
+                    <a href="https://www.amazon.com/Gaia-Fire-TV-Meditation-Spirituality/dp/B01N9SQC83/ref=sr_1_1?s=mobile-apps&amp;ie=UTF8&amp;qid=1487105671&amp;sr=1-1&amp;keywords=gaia" target="_blank">
+                        <img class="icons-footer aligncenter" src="/wp-content/themes/gaia-marketing-layer/assets/images/apps/icon-amazon-firetv-black.svg"/>
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+        <!-- Popups -->
+        
+
+        
+        
+        
+
+                                                    <div id="" class="layer layer-popup layer-popup--bottom"
+             data-pu-pos="bottom"
+             data-pu-trig="timer"
+                          data-pu-delay="60"                                        >
+            <div class="container-fluid">
+                                                                        <div class="row justify-content-center layer-popup__container on-site-offer">
+    <div class="col-12 on-site-offer__content">
+        <div class="container">
+            <div class="layer-popup__close-btn close-popup-btn">&#10005</div>
+            <div class="row">
+                <div class="col-6 col-lg-6 offset-lg-1 on-site-offer__text-container">
+                    <h2>Subscribe for free</h2>
+                </div>
+                <div class="col-6 col-lg-4 on-site-offer__cta-container">
+                    <a href="/plan-selection?language[]=en" target="_self" class="layer-popup__cta on-site-offer__cta on-site-offer__cta--desktop btn">Start Your Trial Now</a>
+                    <a href="/plan-selection?language[]=en" target="_self" class="layer-popup__cta on-site-offer__cta on-site-offer__cta--mobile btn">Start Trial</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                                </div>
+        </div>
+    <script>
+    $(document).ready(function () {
+
+        // handle displays
+        $('.layer-popup').each(function() {
+
+            // GA Tracking fires
+            let target = $(this),
+                ga_label = $(this).attr('data-pu-ga-event-label');
+
+            switch ($(this).attr('data-pu-trig')){
+
+                case 'timer':
+                    let dur = $(this).attr('data-pu-delay'),
+                        show_logged_in = $(this).attr('data-pu-showloggedin'),
+                        cname = $(this).attr('data-pu-cname'),
+                        pu_timeout = null;
+
+                    if ((!$.fn.isLoggedIn() || show_logged_in)
+                        && (Cookies.get(cname) === undefined || cname === undefined)) {
+                        if (pu_timeout != null) {
+                            clearTimeout(pu_timeout);
+                        }
+                        if (dur > 0) {
+                            pu_timeout = setTimeout(function () {
+                                openTemplatePopup(target);
+                            }, dur * 1000);
+                        } else {
+                            openTemplatePopup(target);
+                        }
+                    }
+                    break;
+
+                case 'scroll':
+                    let visible = false;
+                    $(document).scroll(function(){
+                        // check again 75% of the full screen height
+                        if( $(window).scrollTop() > ($(window).innerHeight() * 0.75) ) {
+                            if(!visible){
+                                visible = true;
+                                openTemplatePopup(target);
+                            }
+                        } else {
+
+                            if(visible){
+
+                                visible = false;
+                                if($(window).width() <= 768) {
+                                    $(target).animate({
+                                        bottom: "-1000px"
+                                    });
+                                } else {
+                                    $(target).animate({
+                                        right: "-2000px"
+                                    });
+                                }
+
+                                if(ga_label) {
+                                    // Popup Closed
+                                    console.log("GA: Popup Hidden -> ", ga_label);
+                                    dataLayer.push({
+                                        'event': 'customEvent',
+                                        'eventCategory': 'pop-up',
+                                        'eventAction': 'exit click',
+                                        'eventLabel': ga_label // name of widget
+                                    });
+                                }
+                            }
+                        }
+                    });
+
+                    // Handle users that change screen size mid experience (low use case)
+                    $( window ).resize(function() {
+                        visible = false;
+                        if($( window ).width() <= 768){
+                            $(target)
+                                .css({
+                                    top: "initial",
+                                    right: "initial",
+                                    bottom: "-1000px"
+                                });
+                        } else {
+                            $(target)
+                                .css({
+                                    top: "48%",
+                                    bottom: "initial",
+                                    right: "-2000px"
+                                })
+                        }
+
+                    });
+
+                    break;
+
+                case 'click':
+                    // reference the value set in CMS for btn target
+                    let btn_class = $(this).attr('data-pu-btn-listener');
+                    $(this).on("popup:clickOpenPopup", function (e, btn) {
+                        if($(btn).hasClass(btn_class)){
+                            openTemplatePopup(target);
+                        }
+                    });
+                    break;
+
+                case 'exit':
+                    let shown = false;
+                    $(document).mouseleave(function(e) {
+                        if( ( e.clientY < 2
+                            || ( e.clientY < 100 && e.clientX > $(window).innerWidth() )
+                            || ( e.clientY < 100 && e.clientX <= 0 ) )
+                            && shown === false )
+                        {
+                            openTemplatePopup(target);
+                            shown = true;
+                        }
+                    });
+                    break;
+            }
+
+            // CTA Buttons
+            if(ga_label) {
+
+                $(this).find('.layer-popup__cta').click(function () {
+
+                    console.log("GA: CTA clicked -> ", ga_label);
+                    // Popup CTA Clicks
+                    dataLayer.push({
+                        'event': 'customEvent',
+                        'eventCategory': 'pop-up',
+                        'eventAction': 'click-cta',
+                        'eventLabel': ga_label
+                    });
+
+                });
+            }
+
+        });
+
+        function openTemplatePopup(target) {
+
+            let pos = $(target).attr('data-pu-pos'),
+                ga_label = $(target).attr('data-pu-ga-event-label');
+
+            switch (pos){
+
+                case 'overlay':
+                    $(target)
+                        .fadeIn()
+                        .find('.close-popup-btn').click(function(){
+                            $(target).hide();
+                        });
+                    break;
+
+                case 'ribbon':
+                    $(target)
+                        .slideDown()
+                        .find('.close-popup-btn').click(function(){
+                            $(target).hide();
+                        });
+                    break;
+
+                case 'top':
+                    $(target)
+                        .slideDown()
+                        .find('.close-popup-btn').click(function(){
+                            $(target).slideUp();
+                        });
+                    break;
+
+                case 'right':
+                    // Mobile/Tablet (sm) slide up from bottom
+                    if($(window).width() <= 768){
+                        $(target)
+                            .animate({
+                                bottom: "0px"
+                            });
+                    // Desktop slide in from side
+                    } else {
+                        $(target)
+                            .animate({
+                                right: "0px"
+                            });
+                    }
+
+                    break;
+
+                case 'bottom':
+                    $(target)
+                        .animate({
+                            bottom: "0px"
+                        })
+                        .find('.close-popup-btn').click(function(){
+                            $(target).animate({
+                                bottom: "-2000px"
+                            });
+                        });
+                    break;
+
+            }
+
+            // GA open and close events
+            if(ga_label) {
+
+                // Popup Displays
+                console.log("GA: Popup Displays -> ", ga_label);
+                dataLayer.push({
+                    'event': 'customEvent',
+                    'eventCategory': 'pop-up',
+                    'eventAction': 'displayed',
+                    'eventLabel': ga_label
+                });
+
+                $(target)
+                    .find('.close-popup-btn').click(function () {
+                        // Popup Closed
+                        console.log("GA: Popup Closed -> ", ga_label);
+                        dataLayer.push({
+                            'event': 'customEvent',
+                            'eventCategory': 'pop-up',
+                            'eventAction': 'exit click',
+                            'eventLabel': ga_label
+                        });
+                    })
+                    // on popups that contain forms
+                    .find('form').submit(function () {
+                        // Email Collected (Pop-Up)
+                        console.log("GA: Popup Form Submit -> ", ga_label);
+                        dataLayer.push({
+                            'event': 'customEvent',
+                            'eventCategory': 'email collection',
+                            'eventAction': 'email submitted',
+                            'eventLabel': ga_label
+                        });
+
+                    });
+            }
+        }
+    });
+</script>
+
+        <!-- Modals -->
+        <div id="" class="layer blocks layer-modal">
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="modal-container">
+                <div class="box">
+                    <div class="close-modal-btn">&#10005</div>
+
+                    <div class="content">
+
+                            
+    <div class="modal-inner language-selection-modal">
+        <h3 class="modal_prompt"></h3>
+        
+        <section class="selector__lang">
+            
+            <div class="selector__modal--container">
+                
+                <div class="selector__modal--container--options">
+                    
+                    <div class="selector__modal selector__modal--option">
+                        <a href="/" data-lang="en" target="_self">
+                            <span class="lang_en"></span>
+                            <span class="circle"></span>
+                        </a>
+                    </div>
+                    <div class="selector__modal selector__modal--option">
+                        <a href="/us/es" data-lang="es" target="_self">
+                            <span class="lang_es"></span>
+                            <span class="circle"></span>
+                        </a>
+                    </div>
+                    <div class="selector__modal selector__modal--option">
+                        <a href="/us/de" data-lang="de" target="_self">
+                            <span class="lang_de"></span>
+                            <span class="circle"></span>
+                        </a>
+                    </div>
+                    <div class="selector__modal selector__modal--option">
+                        <a href="/us/fr" data-lang="fr" target="_self">
+                            <span class="lang_fr"></span>
+                            <span class="circle"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+        </section>
+        
+        <button class="form-control btn btn--primary" type="submit" disabled></button>
+    
+    </div>
+
+                        
+                            
+        
+            
+                                                                                                                                            
+        
+    <div class="modal-inner login-modal">
+        <h4 class="login-title">Log In</h4>
+        <form>
+            
+            <div class="error-message"></div>
+            
+            <div class="login-username">
+                <h6 class="login-label login">User Name or Email</h6>
+                <input class="form-control username" name="username" login="login_user" type="text" placeholder="Example@email.com" value="" >
+                <span class="login-username__error"></span>
+            </div>
+            
+            <div class="login-password">
+                <h6 class="login-label">Password</h6>
+                <input name="password" type="password" class="form-control password" login="login_pw" value="" >
+            </div>
+            
+            <div class="loading"></div>
+            <button class="form-control btn btn--primary login-btn" type="submit" disabled >Log In</button>
+            
+            <div class="login__forgot-password">
+                <a class="login-modal__link login__forgot-password-link" href="#">Forgot Password</a>
+            </div>
+            
+            <div class="login__register">
+                <a class="login-modal__link login_register-link" href="/plan-selection">New To Gaia? View Options & Sign Up.</a>
+            </div>
+            
+            <div class="login__support">
+                <a class="login-modal__link login_support-link" href="https://gaiasupportcenter.zendesk.com/hc/en-us/requests/new" target="_blank" rel="noopener noreferrer">Contact Customer Service</a>
+            </div>
+        
+        </form>
+        <hr>
+        <div class="login-modal__fmtv">
+            <img src="/wp-content/themes/gaia-marketing-layer/assets/images/logos/fmtv-logo-default.svg" alt="FMTV Logo" />
+            <a class="login-modal__link" href="/fmtv">FMTV Member? Click here.</a>
+        </div>
+    </div>
+    
+    <div class="modal-inner forgot-password-modal">
+        <h4>Forgot Password</h4>
+        <form id="forgot-pw-send">
+            
+            <div class="error-message"></div>
+            
+            <p>Enter your email address and we'll send you a link to reset your password.</p>
+            
+            <div class="forgot-password-username forgot-password-username--required">
+                
+                <h6>Email</h6>
+                <input class="form-control email" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="">
+                <span class="login-username__error"></span>
+            
+            </div>
+            <div class="loading"></div>
+            <button class="form-control btn btn--primary" type="submit">Send Reset Link</button>
+        
+        </form>
+    </div>
+    
+    <div class="modal-inner forgot-password-confirm-modal">
+        <h4>Link Sent!</h4>
+        <form>
+            <p>A link to reset your password has been sent to you.</p>
+            
+            <p class="forgot-password__email"></p>
+            <button class="form-control btn btn--primary" type="submit">Done</button>
+        </form>
+    </div>
+
+
+
+
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div id="" class="layer blocks layer-modal-footer">
+    <div class="container-fluid">
+        <div class="modal-container">
+            <div class="box">
+                <div class="content">
+                        <div class="modal-inner cookies-modal">
+        <div class="row">
+            <div class="col-12 col-sm-8">
+                <h6 class="modal_prompt">We use cookies and similar technologies to run this website and help us make recommendations for you. See our <a href="/terms-privacy" target="_blank">Privacy Policy</a> here.</h6>
+            </div>
+            <div class="button-container col-12 col-sm-4">
+                <button class="form-control btn btn--primary accept-cookies" type="submit">Accept</button>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+
+    $(document).ready(function() {
+        
+        var user_key = null,
+            ldata = null;
+        
+        function showCookieOptIn(){
+            
+            //console.log("showCookieOptIn ", GAIA_GLOBALS.lang);
+
+            // Update the modal UI to appropriate language
+            $.getJSON( "/wp-content/themes/gaia-marketing-layer/assets/json/modal-footer-cookies.json", function(data) {
+
+                $('.cookies-modal')
+                    .find('.modal_prompt').html(data[GAIA_GLOBALS.lang]['html_header_message']).end()
+                    .find('.btn').text(data[GAIA_GLOBALS.lang]['text_submit']).end();
+
+                // for now we only need to show the full footer modal, we only have 1 UI currently for cookies opt in
+                $('.layer-modal-footer').fadeIn(250);
+
+            }).fail(function() {
+                console.log( "Error loading language preference text config file." );
+                $('.layer-modal-footer').fadeIn(250);
+            });
+        
+        }
+
+        function hideCookieOptIn(delay){
+
+            var duration = (delay) ? 1000 : 0;
+            // for now we only need to show the full footer modal, we only have 1 UI currently for cookies opt in
+            $('.layer-modal-footer').delay(duration).fadeOut(250);
+
+        }
+
+        function setCookieOptIn(value){
+            
+            // Get all current gaia local stored data
+            var gaia_data = JSON.parse(localStorage.getItem("gaia")),
+                user_key = '-1';
+
+            // Build the data obj to make sure we don't overwrite other data attributes from webapp
+            if (!gaia_data)
+                gaia_data = {};
+
+            if (!gaia_data[user_key])
+                gaia_data[user_key] = {};
+
+            // Set the opt in data
+            gaia_data[user_key]['cookieOptInAccepted'] = value; // setting this value here as well to prevent misses while webApp is overwriting the 'user' data elements
+
+            // Put the object into local storage
+            localStorage.setItem('gaia', JSON.stringify(gaia_data));
+            
+        }
+
+        $('.layer-modal-footer button.accept-cookies').click(function(e) {
+
+            setCookieOptIn(true);
+            hideCookieOptIn(false);
+
+        });
+        
+        // Do the check for Cookie Allowance setting on load and display prompt if not yet set
+        if(!$.fn.getCookieAllowance()) {
+            showCookieOptIn();
+        }
+
+    });
+    
+</script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+    </div>
+    </section>
+
+        
+
+
+<!-- Sharing AddThis www.addthis.com/dashboard to customize -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ae89c8e63dbb5b1"></script>
+<style>.addthis-smartlayers-desktop,.addthis-smartlayers-mobile{display:none}</style><script type="text/javascript">
+    var addthis_share = {
+        url: "https://www.gaia.com/article/the-hollow-moon-theory-is-the-moon-an-artificial-satellite",
+        title: "The Hollow Moon Theory; Is the Moon an Artificial Satellite? | Gaia",
+        description: "During the Apollo missions NASA found that the moon rings like a bell when during seismic activity. They also found the presence of processed minerals not naturally occurring on Earth."
+    }
+</script>
+
+
+
+
+	<script type="text/javascript" src="//players.brightcove.net/1324209225001/4ye3uF8wOe_default/index.min.js"></script>
+	<script type="text/javascript" src="/wp-content/themes/gaia-marketing-layer/assets/js/components/modal.min.js?fmcb=1585610180"></script>
+	<script type="text/javascript" src="/wp-content/themes/gaia-marketing-layer/assets/js/mlscripts.min.js?fmcb=1585610180"></script>
+<script type="text/javascript" src="/wp-content/themes/gaia-marketing-layer/assets/js/hammer.min.js"></script>
+<script type="text/javascript" src="/wp-content/themes/gaia-marketing-layer/assets/js/js.cookie.min.js"></script>
+
+    <script type="text/javascript" src="/wp-content/themes/gaia-marketing-layer/assets/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="https://cdn.optimizely.com/js/401751626.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"df69935d81","applicationID":"157680863","transactionName":"ZFJaYUpQVhAEAhVaV10YeVZMWFcNShIIXV9fUg==","queueTime":0,"applicationTime":1428,"atts":"SBVZFwJKRR4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
